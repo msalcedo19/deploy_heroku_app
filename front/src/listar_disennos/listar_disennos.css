@@ -1,0 +1,53 @@
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.disenno {
+  min-width: 240px;
+  height: 455px;
+}
+
+.disenno_v2 {
+  margin-top: 25px;
+  min-width: 240px;
+  height: auto;
+}
+
+.precio{
+  margin-top: 5px;
+}
+
+@keyframes rotate360 {
+  to { transform: rotate(360deg); }
+}
+
+.rotation{
+  animation: 3s rotate360 infinite linear;
+}
+
+.author{margin-bottom: 0;}
+.email{margin-bottom: 0}
+.design_image{max-width:100%;width:auto;height:auto}
+.icon{font-size: 50px; color: Dodgerblue;}
+.add_icon{padding-top: 30px; padding-bottom: 30px; font-size: 100px; cursor: pointer}
+.add_icon:hover{color: green}
+.download_icon{margin-left: 5px}
+.download:hover{color: green; cursor: pointer}
+
+.footer_disenno{
+  display: flex;
+}
+

@@ -1,0 +1,7 @@
+.container {
+    max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+.invalid-feedback{width: 100%;}
+.lead{max-width: 800px; padding-left: 100px}
