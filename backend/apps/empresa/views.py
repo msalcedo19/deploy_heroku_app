@@ -45,7 +45,6 @@ def api_auth(request):
         'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=2, minutes=30)
     }
     token = cache.get(request.data['email'])
-    print(token)
     if token == None:
         token = jwt.encode(payload, SECRET_KEY).decode('utf-8')
         cache.set(request.data['email'], token)
