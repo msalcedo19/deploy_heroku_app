@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a631f772-7611-4079-9318-7256ad8c195f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/apps/diseño/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/diseño/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/apps/diseño/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/diseño/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/apps/email/sendMail.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/email/sendMail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/apps/empresa/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/empresa/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/apps/empresa/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/empresa/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/apps/image/imageConvert.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/image/imageConvert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/apps/proyecto/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/proyecto/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/env_linux.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/env_linux.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/execute.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/execute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/taskManager/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/taskManager/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +37,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605732355430</updated>
-      <workItem from="1605732356501" duration="14883000" />
+      <workItem from="1605732356501" duration="15273000" />
     </task>
     <servers />
   </component>
