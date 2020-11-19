@@ -1,0 +1,12 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/Proyecto1-Grupo12/backend
+ExecStart=/home/ubuntu/Proyecto1-Grupo12/backend/gunicorn.sh
+
+[Install]
+WantedBy=multi-user.target

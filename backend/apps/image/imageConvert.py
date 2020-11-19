@@ -1,43 +1,49 @@
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw 
-from os import listdir
-import os
-import shutil
+from PIL import Image, ImageFont, ImageDraw
+from django.core.files.storage import default_storage as s3_storage
 import apps.email.sendMail
-from io import BytesIO
-from django.db import models
 from apps.diseño.models import Diseño
-from django.core.files.storage import FileSystemStorage
 
-def transformImage(diseño_id, diseño_original, nombre_diseñador, fecha):
+# Permite transformar una imagen leyendola desde un bucket s3 de aws
+def transformImage(diseño_id, diseño_original, nombre_diseñador, fecha):    
     target = '.png'
     size = 800, 600
 
-    badFiles_directory = '../designs/badfiles/' ## Carpeta donde se dejan los archivos que no lograron ser convertidos a PNG
-    processed_directory = '../designs/procesados/' ## Carpeta con los archivos ya convertidos a PNG
-    source_directory, filename = os.path.split(diseño_original)
-    upload_storage = FileSystemStorage(location='/home/ubuntu/Proyecto1-Grupo12/designs/')
-    path = '/home/ubuntu/Proyecto1-Grupo12/designs/'
+    # Carpeta donde se dejan los archivos que no lograron ser convertidos a PNG
+    # badFiles_directory = 'badfiles/' 
+
+    # Carpeta con los archivos ya convertidos a .png
+    processed_directory = 'procesados/'       
 
     try:
-        print('Diseno a procesar: ', diseño_original)
-        d = Diseño.objects.get(pk=diseño_id)
-
-        im = Image.open(path + diseño_original)
+        # Buscar el diseño a procesar
+        design = Diseño.objects.get(pk=diseño_id)
+                
+        # Leer la imagen del bucket s3 en el sistema        
+        with s3_storage.open(diseño_original, 'rb') as s3_image:
+            # Cargar la imagen como un objeto Pillow.Image
+            im = Image.open(s3_image)
+        
+        # Operaciones sobre la imagen            
         im = im.resize(size, Image.ANTIALIAS)
-
         draw = ImageDraw.Draw(im)
-        font = ImageFont.truetype(font='./apps/image/arialbd.ttf', size=20)
-        draw.text((10, 550), nombre_diseñador + ' - ' + fecha,(255),font=font)
+        font = ImageFont.truetype(font='./apps/image/arialbd.ttf', size=20) 
+        draw.text((10, 550), nombre_diseñador + ' - ' + fecha, (255), font=font)
 
-        im.save(processed_directory + diseño_id + target, optimize=True)
+        # Guardar la imagen procesada en el bucket s3
+        with s3_storage.open(processed_directory + diseño_id + target, 'w') as s3_processed_image:
+            im.save(s3_processed_image, optimize=True)
 
-        d.diseno_procesado=processed_directory + diseño_id + target
-        d.estado = True
-        d.save()
+        # Guardar la referencia a la imagen procesada
+        design.diseno_procesado = processed_directory + diseño_id + target
+        design.estado = True
+        design.save()
 
-        apps.email.sendMail.sendMail(d.email_disenador,  diseño_id,  d.fecha_publicacion)
-    except OSError as error:
-        print(error)
-        shutil.copy(path + diseño_original,  badFiles_directory + filename)        
+        # Enviar el correo notificando al diseñador que su diseño ya fue procesado
+        apps.email.sendMail.sendMail(design.email_disenador, diseño_id, design.fecha_publicacion)
+    except:
+        # TODO: Intentar almacenar en el bucket badfiles o realizar una politica de almacenamiento local
+        # para retry
+        print(error)       
+
+
+

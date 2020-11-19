@@ -16,6 +16,5 @@ from apps.diseño.models import Diseño
 
 while True:
     for d in Diseño.objects.filter(estado=False):
-        print("Diseno ID: ", d.id)
         processImages.delay(d.id, d.diseno_original.name, d.nombre_disenador + ' ' + d.apellido_disenador, d.fecha_publicacion)
     time.sleep(5)

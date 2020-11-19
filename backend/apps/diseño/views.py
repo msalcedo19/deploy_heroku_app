@@ -2,13 +2,21 @@ from rest_framework.decorators import api_view
 from rest_framework.decorators import parser_classes
 from rest_framework.parsers import MultiPartParser
 from django.views.decorators.csrf import csrf_exempt
+from django.core.files.storage import default_storage as s3_storage
 from django.http import JsonResponse
 from apps.diseño.serializers import DiseñoSerializer
 from apps.diseño.models import Diseño
 from apps.proyecto.models import Proyecto
-from backend.settings import UPLOAD_ROOT
+from backend.settings import MEDIA_ROOT
 import base64
 import os
+
+# Codificar una imagen a base64
+def encode_image(path):
+    with s3_storage.open(path, "rb") as image_file:
+        encode = base64.b64encode(image_file.read())
+        # Parse to UTF-8
+        return encode.decode('utf-8')
 
 @csrf_exempt
 def design_list(request, proyecto_pk, *args, **kwargs):    
@@ -49,12 +57,6 @@ def design_detail(request, proyecto_pk, design_pk, *args, **kwargs):
         return design_detail_put(request, *args, **kwargs)
     elif request.method == 'DELETE':
         return design_detail_delete(request, *args, **kwargs)
-
-def encode_image(path):
-    with open(os.path.join(UPLOAD_ROOT, path), "rb") as image_file:
-        encode = base64.b64encode(image_file.read())
-        # Parse to UTF-8
-        return encode.decode('utf-8')
 
 @api_view(['GET'])
 @parser_classes([MultiPartParser])

@@ -12,10 +12,10 @@ def sendMail(to,  nombreDiseno,  fechaDiseno):
     msg.attach(MIMEText(message,'plain'))
 
     # Reemplaza estos valores con tus credenciales de Google Mail
-    username = 'XXXXXXXX'
-    password = 'XXXXXXXXXXXXXXXXXXXXXX/XXXXXXXXXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXX'
+    username = 'matrejos@gmail.com'
+    password = '898Matb16074'
 
-    server = smtplib.SMTP('ses-smtp-user.20201001-145600')
+    server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username, password)
     server.sendmail(username, msg['To'], msg.as_string())

@@ -6,7 +6,6 @@ import apps.email.sendMail
 
 @shared_task
 def processImages(diseño_id, diseño_original, nombre_diseñador, fecha):
-   print("Procesando Diseno ID: ",diseño_id)
    apps.image.imageConvert.transformImage(diseño_id, diseño_original, nombre_diseñador, fecha)
    
 @shared_task

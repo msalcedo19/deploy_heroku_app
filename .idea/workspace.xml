@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a631f772-7611-4079-9318-7256ad8c195f" name="Default Changelist" comment="" />
+    <list default="true" id="a631f772-7611-4079-9318-7256ad8c195f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/apps/diseño/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/diseño/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/apps/diseño/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/diseño/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/apps/email/sendMail.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/email/sendMail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/apps/empresa/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/empresa/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/apps/empresa/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/empresa/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/apps/image/imageConvert.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/image/imageConvert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/apps/proyecto/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/apps/proyecto/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/env_linux.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/env_linux.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/execute.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/execute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/taskManager/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/taskManager/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +34,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Team01-Entrega2/package.json" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -29,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605732355430</updated>
-      <workItem from="1605732356501" duration="1308000" />
+      <workItem from="1605732356501" duration="14883000" />
     </task>
     <servers />
   </component>
@@ -37,6 +58,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605734881986">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605734881986" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605732540292">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

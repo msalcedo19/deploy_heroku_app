@@ -1,6 +1,10 @@
+.*/
 *vscode/
 *__pycache__/
 *migrations/
 db.sqlite3
 proceso/
 .env
+deploy/Lib
+deploy/Scripts
+deploy/Include

@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.decorators import parser_classes
 from rest_framework.parsers import MultiPartParser
+from django.core.cache import cache
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from backend.settings import SECRET_KEY
@@ -42,8 +43,12 @@ def api_auth(request):
     payload = {
         'username': request.data['email'],
         'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=2, minutes=30)
-    }    
-    token = jwt.encode(payload, SECRET_KEY).decode('utf-8')
+    }
+    token = cache.get(request.data['email'])
+    print(token)
+    if token == None:
+        token = jwt.encode(payload, SECRET_KEY).decode('utf-8')
+        cache.set(request.data['email'], token)
     return JsonResponse({'token': token, 'url': empresa.url}, status=200)
 
 @api_view(['GET'])
